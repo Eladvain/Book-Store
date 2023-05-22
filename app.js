@@ -7,7 +7,7 @@ const path = require('path');
 const  port = 2718;
 
 const bookRoute = require("./router/book");
-// const authRoute = require("./router/auth");
+const authorRoute = require("./router/author");
 // const postRoute = require("./router/posts");
 // const messageRoute = require("./router/messages")
 // const adminRoute = require("./router/admin")
@@ -53,7 +53,7 @@ app.use(express.urlencoded( // to support URL-encoded bodies
 }));
 
  app.use("/book", bookRoute);
-// app.use("/auth", authRoute.router);
+app.use("/author", authorRoute);
 // app.use("/post", postRoute);
 // app.use("/message", messageRoute.router);
 // app.use("/admin", adminRoute);

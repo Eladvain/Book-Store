@@ -27,10 +27,7 @@ async function write_to_file(path_file, data)
  async function read_from_file(path_file)
 {
 	const data = await fs.readFile(__dirname+'\\' + path_file);
-  console.log("first data = "+data);
-  console.log(typeof data);
   const new_data = JSON.parse(data); 
-  // console.log("data = "+JSON.stringify(new_data));
 	return new_data; 
 }
 
