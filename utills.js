@@ -4,19 +4,15 @@ const max_ids_file_name = "max_ids_file_name.txt";
 const { promises: fs } = require('fs');
 const { dirname } = require('path');
 
-// const constants_dict ={
-//   "user_file_name": "-users.TXT",
-//   "max_id_file_name": "max_ids_file_name.txt",
-//   "black_list_file_name": "BlackList.txt",
-//   "messages_file_name": "message.txt"
-// }
+const constants_dict ={
+  "books_file_name": "dataFiles\\books.txt",
+  "max_id_file_name": "max_ids_file_name.txt",
+  "authors_file_name": "dataFiles\\authors.txt"
+}
 
-// const max_id_dict ={
-//   "user": "max_id_user",
-//   "message": "max_id_message",
-//   "posts": "max_id_post"
-
-// }
+const max_id_dict ={
+  "book": "max_id_book"
+}
 
 const SECRET = "secret"
 
@@ -31,7 +27,10 @@ async function write_to_file(path_file, data)
  async function read_from_file(path_file)
 {
 	const data = await fs.readFile(__dirname+'\\' + path_file);
+  console.log("first data = "+data);
+  console.log(typeof data);
   const new_data = JSON.parse(data); 
+  // console.log("data = "+JSON.stringify(new_data));
 	return new_data; 
 }
 
@@ -44,14 +43,14 @@ async function file_exists (path) {
   }
 }
 
-// async function initialize_max_ids_from_file()
-// {
-//   const exists = await file_exists(max_ids_file_name);
-//   if(exists){
-//     await read_from_file(max_ids_file_name).then(data=>{map_ids = data;}),
-//     error=>{console.log("fail to read "+ max_ids_file_name);}
-//   }
-// }
+async function initialize_max_ids_from_file()
+{
+  const exists = await file_exists(max_ids_file_name);
+  if(exists){
+    await read_from_file(max_ids_file_name).then(data=>{map_ids = data;}),
+    error=>{console.log("fail to read "+ max_ids_file_name);}
+  }
+}
 
 // async function get_max_id(type)
 // {
@@ -104,5 +103,5 @@ async function file_exists (path) {
 // }
 
 
-// module.exports = {write_to_file, read_from_file, file_exists, initialize_max_ids_from_file,
-//                    get_max_id, check_if_user_is_exist_by_filter, constants_dict, max_id_dict, check_user_suspention, get_user_by_email, get_user_by_email_middleware, SECRET, get_user_name_by_id};
+module.exports = {write_to_file, read_from_file, file_exists, initialize_max_ids_from_file,
+                  constants_dict, max_id_dict, SECRET};

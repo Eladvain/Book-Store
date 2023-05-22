@@ -6,12 +6,12 @@ const path = require('path');
 
 const  port = 2718;
 
-// const userRoute = require("./router/users");
+const bookRoute = require("./router/book");
 // const authRoute = require("./router/auth");
 // const postRoute = require("./router/posts");
 // const messageRoute = require("./router/messages")
 // const adminRoute = require("./router/admin")
-const utills = require("./Utills");
+const utills = require("./utills");
 
 const reExt = /\.([a-z]+)/i;
 
@@ -52,7 +52,7 @@ app.use(express.urlencoded( // to support URL-encoded bodies
   extended: true
 }));
 
-// app.use("/users", userRoute);
+ app.use("/book", bookRoute);
 // app.use("/auth", authRoute.router);
 // app.use("/post", postRoute);
 // app.use("/message", messageRoute.router);
@@ -83,7 +83,7 @@ let msg = `MTABOOK  listening at port ${port}`
  app.listen(port, () => 
  { 
    console.log( msg ) ;
-    // utills.initialize_max_ids_from_file();
+   utills.initialize_max_ids_from_file();
  })
 
 
