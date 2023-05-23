@@ -1,0 +1,7 @@
+[{"name" : "Hamlet", "id" : 1, "author" : 1, "image" : "", "price" : 10},
+  {"name" : "Romeo and Juliet", "id" : 2, "author" : 1, "image" : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRDXfcloIvfKUtdqJ7H4d4L7JJ-OcRMCEsN9oXet2c4gx55GJZS", "price" : 50},
+  {"name" : "Death on the Nile", "id" : 3, "author" : 2, "image" : "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcShkWZIiemlEOksu0_OYgQNFFzH-UGrUrE2zw1O1iRgwPllhkd0", "price" : 25},
+  {"name" : "A Duel of Hearts", "id" : 4, "author" : 3, "image" : "https://books.google.co.il/books/content?id=XKfnGGu1C4QC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U2GMOPD59JinkrAmFM_KFlmtyZQDA&w=1280", "price" : 32},
+  {"name" : "King Lear", "id" : 5, "author" : 1, "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnXQ75itWuFo23uG0I09GBngfxPvnYBQf72ydSCeUYutV3PUge" , "price" : 40},
+  {"name" : "Murder on the Orient Express", "id" : 6, "author" : 2, "image" : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRcYYMfoaHabVYuq-MUPHD6_cQva-arbUgFzOGu2XNa3jUXxi9t", "price" : 15},
+  {"name" : "Crooked House!", "id" : 7, "author" : 2, "image" : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSi5SkahCncWatvUsn3mxgQzJvu1ho6fUdQnC6-pybmUnmye9eH", "price" : 5}]
