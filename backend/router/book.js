@@ -2,7 +2,7 @@ const router = require('express').Router();
 const StatusCodes = require('http-status-codes').StatusCodes;
 const package = require('pkg.json');
 const fs = require('fs');
-const utills = require('../utills');
+const utills = require('../../utills');
 
 
 const set_content_type = function (req, res, next) 

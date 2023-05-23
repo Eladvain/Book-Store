@@ -6,8 +6,8 @@ const path = require('path');
 
 const  port = 2718;
 
-const bookRoute = require("./router/book");
-const authorRoute = require("./router/author");
+const bookRoute = require("./backend/router/book");
+const authorRoute = require("./backend/router/author");
 // const postRoute = require("./router/posts");
 // const messageRoute = require("./router/messages")
 // const adminRoute = require("./router/admin")
