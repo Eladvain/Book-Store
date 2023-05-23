@@ -1,3 +1,0 @@
-[ {"name" : "William Shakespeare", "id" : 1, "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/374px-Shakespeare.jpg"},
-  {"name" : "Agatha Christie", "id" : 2, "image" : "https://upload.wikimedia.org/wikipedia/commons/c/cf/Agatha_Christie.png"},
-  {"name" : "Barbara Cartland", "id" : 3, "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Dame_Barbara_Cartland_Allan_Warren.jpg/407px-Dame_Barbara_Cartland_Allan_Warren.jpg"}]
