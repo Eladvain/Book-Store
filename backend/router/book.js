@@ -16,6 +16,7 @@ const set_content_type = function (req, res, next)
  async function list_all_books( req, res) 
  {
 	const books = await utills.read_from_file(utills.constants_dict.books_file_name);
+	console.log("here");
   res.send({books_list:books,
     msg:"All books returned"});	
 }

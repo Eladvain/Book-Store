@@ -26,7 +26,7 @@ async function write_to_file(path_file, data)
 
  async function read_from_file(path_file)
 {
-	const data = await fs.readFile(__dirname+'\\' + path_file);
+	const data = await fs.readFile(__dirname+'\\backend'+'\\' + path_file);
   const new_data = JSON.parse(data); 
 	return new_data; 
 }
