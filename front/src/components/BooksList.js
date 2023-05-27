@@ -7,15 +7,16 @@ const BooksList = ({booksList}) => {
   const listOfBooks = ()=>{
 
     if(booksList.length === 0) return <div>Loading...</div>
-    else{
-      booksList.map(book =>(
-        <BookItem bookItem = {book}/>
-      
-      ))
-    
-    }
-    
-  }
+      console.log("in else00")
+      booksList.map(book =>{
+        return (
+          <div>
+          <h1>Hellooo</h1>
+          </div>
+        )
+      } 
+      )
+}
   
 
   return (

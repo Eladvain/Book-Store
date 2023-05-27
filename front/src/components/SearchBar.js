@@ -27,13 +27,13 @@ const SearchBar = (props) => {
     const books_res = await response.json();
     const books_list = books_res["books_list"];
     console.log("books_list = "+JSON.stringify(books_list));
-    await setBooks(books_list);
+    setBooks(books_list);
     // console.log("books = "+books)
-    await printBooksToConsole(books);
+    printBooksToConsole(books);
     }
     }
-     printBooks();
-  },[]);
+    printBooks();
+  },[,searchTerm]);
 
   function printBooksToConsole(booksList)
   {
