@@ -2,6 +2,7 @@ const express = require("express");
 const app = express()
 const package = require('pkg.json');
 const path = require('path');
+const cors = require('cors');
 
 
 const  port = 2718;
@@ -36,8 +37,7 @@ function content_type_from_extension( url)
 const set_content_type = function (req, res, next) 
 {
 	const content_type = 
-	(req.baseUrl == '/users' || req.baseUrl == '/auth'  ||
-	 req.baseUrl == '/post' || req.baseUrl == '/message' || req.baseUrl == '/admin') ? 
+	(req.baseUrl == '/book' || req.baseUrl == '/author' ) ? 
 	"application/json; charset=utf-8" : 
 	content_type_from_extension( req.url)
 	res.setHeader("Content-Type", content_type);
@@ -51,6 +51,7 @@ app.use(express.urlencoded( // to support URL-encoded bodies
 {  
   extended: true
 }));
+app.use(cors());
 
  app.use("/book", bookRoute);
 app.use("/author", authorRoute);
@@ -58,7 +59,7 @@ app.use("/author", authorRoute);
 // app.use("/message", messageRoute.router);
 // app.use("/admin", adminRoute);
 
-app.use(express.static(path.join(__dirname, 'site'))); 
+app.use(express.static(path.join(__dirname, 'front'))); 
 
 //for session cookie
 app.use(function(req, res, next) {
