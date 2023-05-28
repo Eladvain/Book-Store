@@ -1,0 +1,19 @@
+.imgBook{
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+  border: 2px green ;
+}
+
+.book-div{
+  width: 30%;
+
+}
+
+.nameBook{
+  text-align: center;
+  font-size: 15px;
+}

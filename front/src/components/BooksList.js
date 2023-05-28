@@ -31,7 +31,7 @@ const BooksList = ({booksList}) => {
       booksList.map((book)=> {
         console.log("inside map func");
         console.log("bookInMap = "+JSON.stringify(book));
-        return <h1>Hellooo</h1>
+        return <BookItem bookItem = {book}/>
           
     }): ""}
       
