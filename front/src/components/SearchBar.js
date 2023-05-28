@@ -26,20 +26,26 @@ const SearchBar = (props) => {
     }
     const books_res = await response.json();
     const books_list = books_res["books_list"];
-    console.log("books_list = "+JSON.stringify(books_list));
-    setBooks(books_list);
+    console.log("books_list in useEffect = "+JSON.stringify(books_list));
+    setBooks([...books_list]);
     // console.log("books = "+books)
-    printBooksToConsole(books);
+    await printBooksToConsole(books);
     }
     }
     printBooks();
-  },[,searchTerm]);
+  },[]);
 
-  function printBooksToConsole(booksList)
+  async function printBooksToConsole(booksList)
   {
-    booksList.map(book=>{
-      console.log("book - "+JSON.stringify(book));
-    })
+    console.log("in printBooks function")
+    if(booksList.length > 0)
+    {
+      await booksList.array.forEach((book) => {
+        console.log("in foreach of printBooks func")
+        console.log("book - "+JSON.stringify(book));  
+      });
+    }
+      
   }
 
   const handleChange = (event)=> setSearchTerm(event.target.value);
