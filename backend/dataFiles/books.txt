@@ -1,4 +1,4 @@
-[{"name" : "Hamlet", "id" : 1, "author" : 1, "image" : "", "price" : 10},
+[{"name" : "Hamlet", "id" : 1, "author" : 1, "image" : "https://g.christianbook.com/g/slideshow/7/72789/main/72789_1_ftc_dp.jpg", "price" : 10},
   {"name" : "Romeo and Juliet", "id" : 2, "author" : 1, "image" : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRDXfcloIvfKUtdqJ7H4d4L7JJ-OcRMCEsN9oXet2c4gx55GJZS", "price" : 50},
   {"name" : "Death on the Nile", "id" : 3, "author" : 2, "image" : "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcShkWZIiemlEOksu0_OYgQNFFzH-UGrUrE2zw1O1iRgwPllhkd0", "price" : 25},
   {"name" : "A Duel of Hearts", "id" : 4, "author" : 3, "image" : "https://books.google.co.il/books/content?id=XKfnGGu1C4QC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U2GMOPD59JinkrAmFM_KFlmtyZQDA&w=1280", "price" : 32},

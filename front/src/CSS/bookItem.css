@@ -8,12 +8,25 @@
   border: 2px green ;
 }
 
+.name-label2{
+  color: aqua;
+  font-size: 15px;
+}
+
+.price-label2{
+  color: rgb(3, 201, 20);
+}
+
 .book-div{
   width: 30%;
-
+  border: 2px solid green ;
 }
 
 .nameBook{
   text-align: center;
-  font-size: 15px;
+  font-size: 10px;
+}
+
+.nameOfBook{
+
 }
