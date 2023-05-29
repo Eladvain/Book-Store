@@ -48,7 +48,55 @@ const SearchBar = (props) => {
       
   }
 
-  const handleChange = (event)=> setSearchTerm(event.target.value);
+  const handleChange = async (event)=> {
+    setSearchTerm(event.target.value);
+    let response;
+    event.preventDefault();
+
+    console.log("in handle change function")
+    console.log("searchTerm = " + searchTerm);
+  
+      const searchBooks = {
+        "bookName" : `${event.target.value}`
+    }
+    console.log("searchValueObject = "+JSON.stringify(searchBooks));
+    try {
+        response = await fetch(`http://localhost:2718/book/search?name=${event.target.value}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+    } catch (e) {
+        console.log("the error is:", e)
+    }
+    console.log("heree");
+    console.log("response = "+response);
+    const books_res = await response.json();
+    const books_list = books_res["books"];
+    console.log("books_list in handle change = "+JSON.stringify(books_list));
+    setBooks([...books_list]);
+
+    // const status = response.status;
+    // console.log("parsed_response status------------", status);
+
+    // if (status !== 200) {
+    //     const parsed_response = await response.json();
+    //     console.log("error");
+    //     this.setState({
+    //         has_error: true,
+    //         message_error: parsed_response.msg
+    //     });
+    // }else
+    // {
+    //     console.log("move to login page");
+    //     window.location.href = '/login.html' 
+    // }
+}
+    
+    
+
+  
 
   return (
     <div className='searchBar'>
@@ -61,7 +109,7 @@ const SearchBar = (props) => {
       <BooksList booksList = {books}/>
     </div>
   )
-
+  }
   // const onSubmit = async (searchTerm)=>{
   //   let response;
   //   if(searchTerm === ""){
@@ -78,6 +126,6 @@ const SearchBar = (props) => {
   //   }
   //   }
   // } 
-}
+
 
 export default SearchBar
