@@ -1,5 +1,6 @@
 import React from 'react'
-import bookItem from '../CSS/bookItem.css'
+import { Link, Outlet } from 'react-router-dom'
+import bookItemStyle from '../CSS/bookItem.css'
 
 const BookItem = ({bookItem}) => {
   // console.log("in bookItem")
@@ -12,6 +13,7 @@ const BookItem = ({bookItem}) => {
 
   return (
     <div className='book-div'>
+      <Link to = "/author" state={{author : name_of_author[bookItem.author], id : bookItem.author}}>
       <div className="nameOfBook">
         <h1 className='nameBook'>{bookItem.name}</h1>
       </div>
@@ -27,6 +29,8 @@ const BookItem = ({bookItem}) => {
           price: 
         </label>
         <label className='price-label2'> {bookItem.price}</label>
+        </Link>
+        <Outlet />
     </div>
   )
 }
