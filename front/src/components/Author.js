@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import BookItem from "./BookItem";
+import BooksList from "./BooksList";
 
 import React, { useEffect, useState } from 'react'
 
@@ -41,7 +42,7 @@ const Author = () => {
   return (
     <div className="author-page">
       <h1 className="authorName">{author}</h1>
-      <div className="booksOfAuthor">
+      <div className="booksBox">
       {booksOfAuthor ? 
       booksOfAuthor.map((book)=> {
         console.log("inside map func in author page");
