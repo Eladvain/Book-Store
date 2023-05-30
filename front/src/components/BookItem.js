@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import bookItemStyle from '../CSS/bookItem.css'
 
-const BookItem = ({bookItem}) => {
+const BookItem = ({bookItem, shoppingBooksCart, setShoppingCartBooks}) => {
   // console.log("in bookItem")
 
   const name_of_author = {
@@ -10,6 +10,13 @@ const BookItem = ({bookItem}) => {
     "2" : "Agatha Christie", 
     "3" : "Barbara Cartland"
   }
+
+  async function addBookToShoppingCart(book)
+    {
+      console.log("in addBook function")
+      setShoppingCartBooks([book,...shoppingBooksCart])
+    }
+  
 
   return (
     <div className='book-div'>
@@ -31,9 +38,7 @@ const BookItem = ({bookItem}) => {
         <label className='price-label2'> {bookItem.price}</label>
         </Link>
         <Outlet />
-        <Link to={"/shoppingCart"} state={{book : bookItem}}>
-          <button className='addButton'>Add To Cart</button>
-        </Link>
+        <button className='addButton' onClick={()=>addBookToShoppingCart(bookItem)}>Add To Cart</button>
       
     </div>
   )

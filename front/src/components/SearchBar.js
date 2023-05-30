@@ -7,6 +7,7 @@ const SearchBar = (props) => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [books, setBooks] = useState([]);
+  const [shoppingCartBooks, setShoppingCartBooks] = [];
 
   useEffect(() => {
     async function printBooks(){
@@ -108,26 +109,9 @@ const SearchBar = (props) => {
         onChange={handleChange}
       />
       <Link to="/shoppingCart">Shopping Cart</Link>
-      <BooksList booksList = {books}/>
+      <BooksList booksList = {books} shoppingBooks = {shoppingCartBooks} setShoppingCart = {setShoppingCartBooks}/>
     </div>
   )
   }
-  // const onSubmit = async (searchTerm)=>{
-  //   let response;
-  //   if(searchTerm === ""){
-  //     try {
-  //       response = await fetch('/book/books', {
-  //           method: 'GET',
-  //           headers: {
-  //               'Content-Type': 'application/json',
-  //               credentials: 'include'
-  //           }
-  //       });
-  //   } catch (error) {
-  //       console.log('error = ' + error);
-  //   }
-  //   }
-  // } 
-
-
+  
 export default SearchBar
