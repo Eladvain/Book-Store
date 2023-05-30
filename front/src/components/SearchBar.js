@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from 'react'
+import { Link } from 'react-router-dom';
 import '../CSS/searchBar.css'
 import BooksList from './BooksList';
 
@@ -54,7 +55,7 @@ const SearchBar = (props) => {
     event.preventDefault();
 
     console.log("in handle change function")
-    console.log("searchTerm = " + searchTerm);
+    console.log("searchTerm = " + searchTerm);  
   
       const searchBooks = {
         "bookName" : `${event.target.value}`
@@ -106,6 +107,7 @@ const SearchBar = (props) => {
         value = {searchTerm}
         onChange={handleChange}
       />
+      <Link to="/shoppingCart">Shopping Cart</Link>
       <BooksList booksList = {books}/>
     </div>
   )

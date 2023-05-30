@@ -31,7 +31,7 @@ const BookItem = ({bookItem}) => {
         <label className='price-label2'> {bookItem.price}</label>
         </Link>
         <Outlet />
-        <Link to={"/shoppingCart"}>
+        <Link to={"/shoppingCart"} state={{book : bookItem}}>
           <button className='addButton'>Add To Cart</button>
         </Link>
       
