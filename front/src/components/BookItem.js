@@ -31,7 +31,10 @@ const BookItem = ({bookItem}) => {
         <label className='price-label2'> {bookItem.price}</label>
         </Link>
         <Outlet />
-        <button className='addButton'>Add To Cart</button>
+        <Link to={"/shoppingCart"}>
+          <button className='addButton'>Add To Cart</button>
+        </Link>
+      
     </div>
   )
 }
