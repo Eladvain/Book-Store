@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from "react-router-dom";
+import BookItem from './BookItem';
 
 const ShopingCart = () => {
 
   const location = useLocation();
-  const {shoppingBooks, setShoppingBooksCart} = location.state ?? {};
+  const {shoppingBooks, addToShopping} = location.state ?? {};
 
   useEffect(()=>{
+    console.log("here in use effect of shopping cart comp");
     if(shoppingBooks.length > 0)
     console.log("shopping cart component = "+JSON.stringify(shoppingBooks));
   },[])
@@ -24,12 +26,13 @@ const ShopingCart = () => {
 
   return (
     <div>
-      <h1>hellooo</h1>
-      {/* {shoppingBooks.length > 0 ?
-            shoppingBooks.map((book)=>{
-              return <h1>shalom</h1>
+      <h1>Shopping Cart</h1>
+      {/* {console.log("here in before if")} */}
+      {shoppingBooks.length > 0 ?
+            shoppingBooks.map((book, key)=>{
+              return <BookItem bookItem = {book} addToShoppingCart = {addToShopping} isShoppingCart = {"true"} />
             })
-          :""} */}
+          :""}
     </div>
   )
 }

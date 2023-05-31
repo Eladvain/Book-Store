@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import bookItemStyle from '../CSS/bookItem.css'
 
-const BookItem = ({bookItem, shoppingBooksCart, setShoppingCartBooks, addToShoppingCart}) => {
+const BookItem = ({bookItem, addToShoppingCart, isShoppingCart}) => {
   // console.log("in bookItem")
 
   const name_of_author = {
@@ -10,28 +10,6 @@ const BookItem = ({bookItem, shoppingBooksCart, setShoppingCartBooks, addToShopp
     "2" : "Agatha Christie", 
     "3" : "Barbara Cartland"
   }
-
-  // async function addBookToShoppingCart(book)
-  //   {
-  //     console.log("book in shopping cart = "+JSON.stringify(book));
-  //     console.log("in addBook function")
-  //     setShoppingCartBooks([book,...shoppingBooksCart])
-  //     console.log("in favourite book = "+JSON.stringify(shoppingBooksCart));
-      // if(shoppingBooksCart.length > 0)
-      // {
-      //   console.log("in if in add book")
-      //   setShoppingCartBooks([book,...shoppingBooksCart])
-      //   console.log("in favourite book = "+JSON.stringify(shoppingBooksCart));
-      // }
-      // else  
-      // {
-      //   console.log("in else in add book")
-      //   setShoppingCartBooks([book])  ;
-      //   console.log("in favourite book = "+JSON.stringify(shoppingBooksCart));
-      // }
-        
-    // }
-  
 
   return (
     <div className='book-div'>
@@ -53,7 +31,10 @@ const BookItem = ({bookItem, shoppingBooksCart, setShoppingCartBooks, addToShopp
         <label className='price-label2'> {bookItem.price}</label>
         </Link>
         <Outlet />
-        <button className='addButton' onClick={()=>addToShoppingCart(bookItem)}>Add To Cart</button>
+        {isShoppingCart === "false" ?
+          <button className='addButton' onClick={()=>addToShoppingCart(bookItem)}>Add To Cart</button>
+        : ""}
+        
       
     </div>
   )

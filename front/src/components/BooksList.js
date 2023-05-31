@@ -13,7 +13,10 @@ const BooksList = ({booksList, shoppingBooks, setShoppingCart, addToShopping}) =
       booksList.map((book)=> {
         // console.log("inside map func");
         // console.log("bookInMap = "+JSON.stringify(book));
-        return <BookItem bookItem = {book} shoppingBooksCart = {shoppingBooks} setShoppingCartBooks = {setShoppingCart} addToShoppingCart = {addToShopping} />
+        return <BookItem 
+                bookItem = {book} 
+                addToShoppingCart = {addToShopping} 
+                isShoppingCart = {"false"} />
           
     }): ""}
       
