@@ -17,7 +17,7 @@ const SearchBar = (props) => {
     async function printBooks(){
       let response;
     if(searchTerm === ""){
-      console.log("inside");
+      // console.log("inside");
       try {
         response = await fetch("http://localhost:2718/book/books", {
             method: 'GET',
@@ -35,24 +35,11 @@ const SearchBar = (props) => {
     console.log("books_list in useEffect = "+JSON.stringify(books_list));
     setBooks([...books_list]);
     // console.log("books = "+books)
-    await printBooksToConsole(books);
+    // await printBooksToConsole(books);
     }
     }
     printBooks();
   },[]);
-
-  async function printBooksToConsole(booksList)
-  {
-    console.log("in printBooks function")
-    if(booksList.length > 0)
-    {
-      await booksList.array.forEach((book) => {
-        console.log("in foreach of printBooks func")
-        console.log("book - "+JSON.stringify(book));  
-      });
-    }
-      
-  }
 
   const handleChange = async (event)=> {
     setSearchTerm(event.target.value);
@@ -83,23 +70,16 @@ const SearchBar = (props) => {
     console.log("books_list in handle change = "+JSON.stringify(books_list));
     setBooks([...books_list]);
 
-    // const status = response.status;
-    // console.log("parsed_response status------------", status);
-
-    // if (status !== 200) {
-    //     const parsed_response = await response.json();
-    //     console.log("error");
-    //     this.setState({
-    //         has_error: true,
-    //         message_error: parsed_response.msg
-    //     });
-    // }else
-    // {
-    //     console.log("move to login page");
-    //     window.location.href = '/login.html' 
-    // }
 }
-    
+
+async function addBookToShoppingCart(book)
+    {
+      console.log("book in shopping cart = "+JSON.stringify(book));
+      console.log("in addBook function")
+      setShoppingCartBooks([book,...shoppingCartBooks])
+      console.log("in favourite book = "+JSON.stringify(shoppingCartBooks));
+  
+    }
     
 
   
@@ -112,8 +92,8 @@ const SearchBar = (props) => {
         value = {searchTerm}
         onChange={handleChange}
       />
-      <Link to="/shoppingCart" state={{shoppingBooks : shoppingCartBooks, setShoppingBooksCart : setShoppingCartBooks}}>Shopping Cart</Link>
-      <BooksList booksList = {books} shoppingBooks = {shoppingCartBooks} setShoppingCart = {setShoppingCartBooks}/>
+      <Link to="/shoppingCart" state={{shoppingBooks : shoppingCartBooks}}>Shopping Cart</Link>
+      <BooksList booksList = {books} addToShopping = {addBookToShoppingCart}/>
     </div>
   )
   }

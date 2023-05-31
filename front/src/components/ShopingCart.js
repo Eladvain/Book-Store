@@ -6,7 +6,11 @@ const ShopingCart = () => {
   const location = useLocation();
   const {shoppingBooks, setShoppingBooksCart} = location.state ?? {};
 
-  console.log("shopping cart component = "+JSON.stringify(shoppingBooks));
+  useEffect(()=>{
+    if(shoppingBooks.length > 0)
+    console.log("shopping cart component = "+JSON.stringify(shoppingBooks));
+  },[])
+  
 
   // const [shoppingCartBooks, setShoppingCartBooks] = useState([]);
 
@@ -21,8 +25,8 @@ const ShopingCart = () => {
   return (
     <div>
       <h1>hellooo</h1>
-      {/* {shoppingCartBooks.length > 0 ?
-            shoppingCartBooks.map((book)=>{
+      {/* {shoppingBooks.length > 0 ?
+            shoppingBooks.map((book)=>{
               return <h1>shalom</h1>
             })
           :""} */}
