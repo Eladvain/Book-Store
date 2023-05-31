@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from "react-router-dom";
 
-const ShopingCart = ({shoppingBooks, setShoppingCart}) => {
+const ShopingCart = () => {
 
   const location = useLocation();
-  const {book} = location.state;
+  const {shoppingBooks, setShoppingBooksCart} = location.state ?? {};
+
+  console.log("shopping cart component = "+JSON.stringify(shoppingBooks));
 
   // const [shoppingCartBooks, setShoppingCartBooks] = useState([]);
 

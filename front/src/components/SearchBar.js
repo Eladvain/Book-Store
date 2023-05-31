@@ -7,7 +7,11 @@ const SearchBar = (props) => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [books, setBooks] = useState([]);
-  const [shoppingCartBooks, setShoppingCartBooks] = [];
+  const [shoppingCartBooks, setShoppingCartBooks] = useState([]);
+
+  useEffect(()=>{
+    console.log("shopping cart books = "+JSON.stringify(shoppingCartBooks));
+  }, [shoppingCartBooks])
 
   useEffect(() => {
     async function printBooks(){
@@ -108,7 +112,7 @@ const SearchBar = (props) => {
         value = {searchTerm}
         onChange={handleChange}
       />
-      <Link to="/shoppingCart">Shopping Cart</Link>
+      <Link to="/shoppingCart" state={{shoppingBooks : shoppingCartBooks, setShoppingBooksCart : setShoppingCartBooks}}>Shopping Cart</Link>
       <BooksList booksList = {books} shoppingBooks = {shoppingCartBooks} setShoppingCart = {setShoppingCartBooks}/>
     </div>
   )

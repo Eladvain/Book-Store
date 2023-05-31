@@ -13,8 +13,23 @@ const BookItem = ({bookItem, shoppingBooksCart, setShoppingCartBooks}) => {
 
   async function addBookToShoppingCart(book)
     {
+      console.log("book in shopping cart = "+JSON.stringify(book));
       console.log("in addBook function")
       setShoppingCartBooks([book,...shoppingBooksCart])
+      console.log("in favourite book = "+JSON.stringify(shoppingBooksCart));
+      // if(shoppingBooksCart.length > 0)
+      // {
+      //   console.log("in if in add book")
+      //   setShoppingCartBooks([book,...shoppingBooksCart])
+      //   console.log("in favourite book = "+JSON.stringify(shoppingBooksCart));
+      // }
+      // else  
+      // {
+      //   console.log("in else in add book")
+      //   setShoppingCartBooks([book])  ;
+      //   console.log("in favourite book = "+JSON.stringify(shoppingBooksCart));
+      // }
+        
     }
   
 
