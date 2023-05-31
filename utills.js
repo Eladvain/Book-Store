@@ -49,6 +49,8 @@ async function initialize_max_ids_from_file()
   }
 }
 
+
+
 // async function get_max_id(type)
 // {
 //      const map_ids = await read_from_file(constants_dict.max_id_file_name);
