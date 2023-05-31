@@ -76,8 +76,10 @@ async function addBookToShoppingCart(book)
     {
       console.log("book in shopping cart = "+JSON.stringify(book));
       console.log("in addBook function")
-      setShoppingCartBooks([book,...shoppingCartBooks])
+      setShoppingCartBooks([book, ...shoppingCartBooks]);
       console.log("in favourite book = "+JSON.stringify(shoppingCartBooks));
+      document.cookie ="shoppingcartbooks="+ JSON.stringify(shoppingCartBooks);
+      console.log("document.cookie = "+document.cookie);
   
     }
     
