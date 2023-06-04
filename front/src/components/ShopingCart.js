@@ -15,7 +15,12 @@ const ShopingCart = () => {
   useEffect(()=>{
     console.log("here in use effect of shopping cart comp");
     if(shoppingBooks.length > 0)
-    console.log("shopping cart component = "+JSON.stringify(shoppingBooks));
+    {
+      const shoppingCartFromCookie = utills.getCookie("shoppingcartbooks");
+      console.log("fromCookie = "+shoppingCartFromCookie);
+      console.log("shopping cart component = "+JSON.stringify(shoppingBooks));
+    }
+    
   },[])
   
 
@@ -32,12 +37,12 @@ const ShopingCart = () => {
   return (
     <div>
       <h1>Shopping Cart</h1>
-      {/* {console.log("here in before if")} */}
-      {/* {document.cookie.length > 0 ?
-            document.cookie.map((book, key)=>{
-              return <BookItem bookItem = {book} addToShoppingCart = {addToShopping} isShoppingCart = {"true"} />
+      {console.log("here in before if")} 
+      {shoppingBooks.length > 0 ?
+            shoppingBooks.map((book, key)=>{
+              return <BookItem bookItem = {book}  isShoppingCart = {"true"} />
             })
-          :""} */}
+          :""} 
     </div>
   )
 }
